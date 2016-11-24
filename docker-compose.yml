@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  hello-world:
+    build: .
+    environment: 
+      - REDIS_SERVICE_HOST=redis
+    ports:
+      - 3000:3000
+    depends_on:
+      - redis
+  redis:
+    image: redis
